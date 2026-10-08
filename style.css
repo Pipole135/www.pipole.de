@@ -334,6 +334,43 @@ body::before {
         background 0.3s ease;
 }
 
+/* =========================
+   PROJEKT-LOGOS
+========================= */
+
+.project-logo {
+
+    position: absolute;
+
+    top: 35px;
+    right: 35px;
+
+    width: 140px;
+    height: 90px;
+
+    object-fit: contain;
+
+    opacity: 0.9;
+
+    filter:
+        drop-shadow(
+            0 0 12px rgba(255,255,255,0.08)
+        );
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* Logo-Hover */
+
+.project-card:hover .project-logo {
+
+    transform: scale(1.05);
+
+    opacity: 1;
+}
 
 /* Rainbow-Linie */
 
