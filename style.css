@@ -456,6 +456,145 @@ body::before {
     letter-spacing: 0.25em;
 }
 
+/* =========================
+   MENÜ
+========================= */
+
+.menu {
+
+    min-height: 70vh;
+
+    padding: 120px 25px 140px;
+
+    position: relative;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            rgba(5,5,5,0.55),
+            rgba(5,5,5,0.55)
+        );
+}
+
+
+/* =========================
+   MENÜ-EINTRÄGE
+========================= */
+
+.menu-grid {
+
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+.menu-item {
+
+    min-height: 140px;
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 1.1rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.12em;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Rainbow-Linie */
+
+.menu-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: var(--rainbow);
+}
+
+
+/* Hover */
+
+.menu-item:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(255,255,255,0.35);
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+
+/* =========================
+   MENÜ MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .menu-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .menu-item {
+
+        min-height: 110px;
+
+        padding: 30px;
+
+        font-size: 0.95rem;
+    }
+}
 
 /* =========================
    FOOTER
