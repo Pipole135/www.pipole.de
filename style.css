@@ -3,7 +3,6 @@
 :root {
     --black: #050505;
     --white: #ffffff;
-    --grey: #9a9a9a;
 
     --rainbow: linear-gradient(
         90deg,
@@ -35,13 +34,48 @@ body {
     font-family: 'Montserrat', Arial, sans-serif;
 
     overflow: hidden;
+
+    position: relative;
 }
+
+
+/* =========================
+   HINTERGRUND-MUSTER
+========================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+        url("assets/pipole-group-logo.png");
+
+    background-size: 320px auto;
+
+    background-repeat: repeat;
+
+    background-position: center;
+
+    opacity: 0.035;
+
+    transform: rotate(-8deg) scale(1.15);
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
 
 /* =========================
    RAINBOW BAR
 ========================= */
 
 .rainbow-bar {
+
     position: fixed;
 
     top: 0;
@@ -55,6 +89,7 @@ body {
     z-index: 100;
 }
 
+
 /* =========================
    HERO
 ========================= */
@@ -65,8 +100,6 @@ body {
 
     display: flex;
 
-    flex-direction: column;
-
     align-items: center;
 
     justify-content: center;
@@ -76,7 +109,10 @@ body {
     padding: 40px 25px 100px;
 
     position: relative;
+
+    z-index: 1;
 }
+
 
 /* =========================
    LOGO
@@ -101,110 +137,14 @@ body {
 
     object-fit: contain;
 
-    filter: drop-shadow(
-        0 0 25px rgba(255,255,255,0.08)
-    );
+    filter:
+        drop-shadow(
+            0 0 25px rgba(255,255,255,0.08)
+        );
 
     animation: logoAppear 1s ease forwards;
 }
 
-/* =========================
-   CLAIM
-========================= */
-
-.claim {
-
-    margin-top: 45px;
-
-    margin-bottom: 35px;
-
-    color: var(--grey);
-
-    font-size: clamp(
-        0.75rem,
-        2vw,
-        1rem
-    );
-
-    font-weight: 600;
-
-    letter-spacing: 0.45em;
-
-    padding-left: 0.45em;
-
-    animation: fadeUp 1s ease 0.2s both;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.discover {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    padding: 15px 25px;
-
-    border: 1px solid rgba(
-        255,
-        255,
-        255,
-        0.45
-    );
-
-    border-radius: 50px;
-
-    background: rgba(
-        255,
-        255,
-        255,
-        0.03
-    );
-
-    color: white;
-
-    font-family: inherit;
-
-    font-size: 0.75rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.2em;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
-
-    animation: fadeUp 1s ease 0.4s both;
-}
-
-.discover span {
-
-    font-size: 1.2rem;
-
-    line-height: 0;
-}
-
-.discover:hover {
-
-    transform: translateY(-4px);
-
-    background: rgba(
-        255,
-        255,
-        255,
-        0.08
-    );
-
-    border-color: white;
-}
 
 /* =========================
    FOOTER
@@ -227,10 +167,13 @@ footer {
     font-size: 0.65rem;
 
     letter-spacing: 0.18em;
+
+    z-index: 2;
 }
 
+
 /* =========================
-   ANIMATION
+   LOGO ANIMATION
 ========================= */
 
 @keyframes logoAppear {
@@ -254,24 +197,6 @@ footer {
     }
 }
 
-@keyframes fadeUp {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(15px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
 
 /* =========================
    MOBILE
@@ -283,16 +208,4 @@ footer {
 
         width: 88vw;
     }
-
-    .claim {
-
-        margin-top: 30px;
-
-        letter-spacing: 0.25em;
-
-        padding-left: 0.25em;
-
-        line-height: 1.8;
-    }
-
 }
