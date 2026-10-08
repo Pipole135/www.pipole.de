@@ -3,6 +3,7 @@
 :root {
     --black: #050505;
     --white: #ffffff;
+    --grey: #9a9a9a;
 
     --rainbow: linear-gradient(
         90deg,
@@ -16,6 +17,11 @@
     );
 }
 
+
+/* =========================
+   GRUNDLAYOUT
+========================= */
+
 * {
     box-sizing: border-box;
 }
@@ -28,12 +34,12 @@ body {
     margin: 0;
     min-height: 100vh;
 
-    background: var(--black);
+    background: #050505;
     color: var(--white);
 
     font-family: 'Montserrat', Arial, sans-serif;
 
-    overflow: hidden;
+    overflow-x: hidden;
 
     position: relative;
 }
@@ -52,17 +58,15 @@ body::before {
     inset: 0;
 
     background-image:
-        url("assets/Muster_Silhouetten.png");
+        url("assets/Muster_Silhoutten.png");
 
-    background-size: 320px auto;
+    background-size: 500px auto;
 
     background-repeat: repeat;
 
     background-position: center;
 
     opacity: 0.035;
-
-    transform: rotate(-8deg) scale(1.15);
 
     z-index: 0;
 
@@ -100,6 +104,8 @@ body::before {
 
     display: flex;
 
+    flex-direction: column;
+
     align-items: center;
 
     justify-content: center;
@@ -117,6 +123,19 @@ body::before {
 /* =========================
    LOGO
 ========================= */
+
+.logo-link {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
 
 .logo-container {
 
@@ -142,7 +161,262 @@ body::before {
             0 0 25px rgba(255,255,255,0.08)
         );
 
-    animation: logoAppear 1s ease forwards;
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* Logo-Hover */
+
+.logo-link:hover .logo {
+
+    transform: scale(1.03);
+
+    filter:
+        drop-shadow(
+            0 0 35px rgba(255,255,255,0.18)
+        );
+}
+
+
+/* =========================
+   ENTDECKEN
+========================= */
+
+.scroll-hint {
+
+    margin-top: 45px;
+
+    color: #888;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.35em;
+
+    padding-left: 0.35em;
+
+    animation:
+        hintPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes hintPulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   PROJEKTE
+========================= */
+
+.projects {
+
+    min-height: 100vh;
+
+    padding: 120px 25px 160px;
+
+    position: relative;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            rgba(5,5,5,0.55),
+            rgba(5,5,5,0.55)
+        );
+}
+
+
+/* =========================
+   SECTION TITEL
+========================= */
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.section-title span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4em;
+
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+
+    margin: 0;
+
+    font-size: clamp(
+        2rem,
+        5vw,
+        3.5rem
+    );
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================
+   PROJEKT-KARTEN
+========================= */
+
+.project-grid {
+
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+.project-card {
+
+    min-height: 260px;
+
+    padding: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Rainbow-Linie */
+
+.project-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: var(--rainbow);
+}
+
+
+/* Hover */
+
+.project-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(255,255,255,0.35);
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+
+/* =========================
+   PROJEKT ICON
+========================= */
+
+.project-icon {
+
+    position: absolute;
+
+    top: 30px;
+    right: 35px;
+
+    font-size: 3rem;
+
+    opacity: 0.35;
+}
+
+
+/* =========================
+   PROJEKT TEXT
+========================= */
+
+.project-content h3 {
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            1.5rem,
+            3vw,
+            2.2rem
+        );
+
+    font-weight: 900;
+
+    letter-spacing: 0.04em;
+}
+
+.project-content p {
+
+    margin:
+        8px 0 0;
+
+    color: #999;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.25em;
 }
 
 
@@ -152,13 +426,12 @@ body::before {
 
 footer {
 
-    position: fixed;
+    position: relative;
 
-    bottom: 25px;
+    z-index: 2;
 
-    left: 0;
-
-    width: 100%;
+    padding:
+        25px 20px 30px;
 
     text-align: center;
 
@@ -168,33 +441,7 @@ footer {
 
     letter-spacing: 0.18em;
 
-    z-index: 2;
-}
-
-
-/* =========================
-   LOGO ANIMATION
-========================= */
-
-@keyframes logoAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(0.96)
-            translateY(15px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-    }
+    background: #050505;
 }
 
 
@@ -202,10 +449,28 @@ footer {
    MOBILE
 ========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-    .logo-container {
+    .project-grid {
 
-        width: 88vw;
+        grid-template-columns:
+            1fr;
+    }
+
+    .project-card {
+
+        min-height: 220px;
+
+        padding: 30px;
+    }
+
+    .section-title {
+
+        margin-bottom: 45px;
+    }
+
+    .scroll-hint {
+
+        margin-top: 30px;
     }
 }
