@@ -595,6 +595,193 @@ body::before {
         font-size: 0.95rem;
     }
 }
+/* =========================
+   KONTAKT
+========================= */
+
+.contact {
+
+    min-height: 70vh;
+
+    padding: 120px 25px 140px;
+
+    position: relative;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            rgba(5,5,5,0.55),
+            rgba(5,5,5,0.55)
+        );
+}
+
+
+/* =========================
+   KONTAKT-EINTRÄGE
+========================= */
+
+.contact-grid {
+
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.contact-item:first-child {
+
+    grid-column:
+        1 / -1;
+}
+
+.contact-item {
+
+    min-height: 180px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: white;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Rainbow-Linie */
+
+.contact-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: var(--rainbow);
+}
+
+
+/* Titel */
+
+.contact-title {
+
+    font-size: 1rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* E-Mail */
+
+.contact-email {
+
+    margin-top: 12px;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* Beschreibung */
+
+.contact-description {
+
+    margin-top: 8px;
+
+    color: #999;
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* Hover */
+
+.contact-item:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(255,255,255,0.35);
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+
+/* =========================
+   KONTAKT MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .contact-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .contact-item {
+
+        min-height: 150px;
+
+        padding: 30px;
+    }
+
+    .contact-email {
+
+        font-size: 0.9rem;
+    }
+}
 
 /* =========================
    FOOTER
