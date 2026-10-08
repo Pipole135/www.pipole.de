@@ -1,2 +1,3 @@
-# Pipole_Website_Test
-Test Website
+# Pipole Group
+Die offizielle Dachmarke hinter allen Pipole Kanälen
+Infos, Kontakt und mehr - Hier zuerst!
