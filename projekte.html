@@ -297,6 +297,56 @@
                 transform: none;
             }
         }
+
+            .project-card {
+                display: grid;
+                grid-template-columns: 65px minmax(0, 1fr) 30px;
+                align-items: center;
+                gap: 22px;
+                text-align: left;
+            }
+    
+            .project-icon {
+                grid-column: 1;
+                justify-self: center;
+                flex: initial;
+                width: 65px;
+                height: 65px;
+                font-size: 2.4rem;
+            }
+    
+            .project-content {
+                grid-column: 2;
+                min-width: 0;
+                text-align: left;
+            }
+    
+            .project-content h2 {
+                letter-spacing: 1px;
+            }
+    
+            .project-content p {
+                letter-spacing: normal;
+                overflow-wrap: anywhere;
+            }
+    
+            .project-arrow {
+                grid-column: 3;
+                justify-self: center;
+            }
+    
+            @media (max-width: 600px) {
+                .project-card {
+                    grid-template-columns: 45px minmax(0, 1fr) 20px;
+                    gap: 14px;
+                }
+    
+                .project-icon {
+                    width: 45px;
+                    height: 45px;
+                    font-size: 2rem;
+                }
+            }
     </style>
 </head>
 
