@@ -6,8 +6,7 @@
     <meta name="theme-color" content="#080808">
 
     <title>Projekte | PIPOLE GROUP</title>
-    <meta name="description"
-          content="Entdecke die YouTube-Kanäle, Musik und Mods von PIPOLE GROUP.">
+    <meta name="description" content="Entdecke die YouTube-Kanäle, Musik und Mods von PIPOLE GROUP.">
 
     <link rel="stylesheet" href="style.css">
 
@@ -18,7 +17,6 @@
             padding: 35px 0 60px;
         }
 
-        /* Kopfbereich */
         .projects-header {
             display: flex;
             align-items: center;
@@ -57,7 +55,6 @@
             font-size: 0.9rem;
         }
 
-        /* Menü-Kasten oben rechts */
         .menu-button {
             display: inline-flex;
             align-items: center;
@@ -95,7 +92,6 @@
             background: rgba(45, 45, 45, 0.98);
         }
 
-        /* Überschrift */
         .projects-intro {
             text-align: center;
             margin-bottom: 35px;
@@ -114,7 +110,6 @@
             margin: 0;
         }
 
-        /* Projekt-Kacheln */
         .project-list {
             display: flex;
             flex-direction: column;
@@ -123,19 +118,19 @@
 
         .project-card {
             position: relative;
-            display: flex;
+            display: grid;
+            grid-template-columns: 65px minmax(0, 1fr) 30px;
             align-items: center;
-            gap: 25px;
+            gap: 22px;
             min-height: 145px;
             padding: 30px;
             overflow: hidden;
-
             color: #ffffff;
             text-decoration: none;
+            text-align: left;
             background: rgba(18, 18, 18, 0.94);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
-
             transition:
                 transform 0.2s ease,
                 background 0.2s ease,
@@ -175,22 +170,25 @@
         }
 
         .project-icon {
-            flex: 0 0 65px;
-            width: 65px;
-            height: 65px;
+            grid-column: 1;
+            justify-self: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.8rem;
+            width: 65px;
+            height: 65px;
+            font-size: 2.4rem;
         }
 
         .project-content {
-            flex: 1;
+            grid-column: 2;
+            min-width: 0;
+            text-align: left;
         }
 
         .project-content h2 {
             font-size: 1.4rem;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             margin: 0 0 10px;
         }
 
@@ -198,15 +196,18 @@
             color: #c5c5c5;
             font-size: 1rem;
             line-height: 1.6;
+            letter-spacing: normal;
             margin: 0;
+            overflow-wrap: anywhere;
         }
 
         .project-arrow {
+            grid-column: 3;
+            justify-self: center;
             font-size: 1.8rem;
             color: #ffffff;
         }
 
-        /* Zurück zur Startseite */
         .projects-footer {
             text-align: center;
             margin-top: 35px;
@@ -224,7 +225,6 @@
             text-decoration: underline;
         }
 
-        /* Smartphone */
         @media (max-width: 600px) {
             .projects-page {
                 padding-top: 25px;
@@ -260,16 +260,16 @@
             }
 
             .project-card {
-                gap: 15px;
+                grid-template-columns: 45px minmax(0, 1fr) 20px;
+                gap: 14px;
                 min-height: 125px;
                 padding: 24px 18px;
             }
 
             .project-icon {
-                flex-basis: 45px;
                 width: 45px;
                 height: 45px;
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .project-content h2 {
@@ -297,65 +297,13 @@
                 transform: none;
             }
         }
-
-            .project-card {
-                display: grid;
-                grid-template-columns: 65px minmax(0, 1fr) 30px;
-                align-items: center;
-                gap: 22px;
-                text-align: left;
-            }
-    
-            .project-icon {
-                grid-column: 1;
-                justify-self: center;
-                flex: initial;
-                width: 65px;
-                height: 65px;
-                font-size: 2.4rem;
-            }
-    
-            .project-content {
-                grid-column: 2;
-                min-width: 0;
-                text-align: left;
-            }
-    
-            .project-content h2 {
-                letter-spacing: 1px;
-            }
-    
-            .project-content p {
-                letter-spacing: normal;
-                overflow-wrap: anywhere;
-            }
-    
-            .project-arrow {
-                grid-column: 3;
-                justify-self: center;
-            }
-    
-            @media (max-width: 600px) {
-                .project-card {
-                    grid-template-columns: 45px minmax(0, 1fr) 20px;
-                    gap: 14px;
-                }
-    
-                .project-icon {
-                    width: 45px;
-                    height: 45px;
-                    font-size: 2rem;
-                }
-            }
     </style>
 </head>
 
 <body>
     <main class="projects-page">
 
-        <!-- LOGO UND MENÜ -->
         <header class="projects-header">
-
             <a
                 href="https://www.pipole.de/"
                 class="brand-link"
@@ -377,10 +325,8 @@
                 <span aria-hidden="true">☰</span>
                 <span>MENÜ</span>
             </a>
-
         </header>
 
-        <!-- ÜBERSCHRIFT -->
         <section class="projects-intro">
             <h1>UNSERE PROJEKTE</h1>
             <p>
@@ -388,10 +334,8 @@
             </p>
         </section>
 
-        <!-- PROJEKTARTEN -->
         <nav class="project-list" aria-label="Projektbereiche">
 
-            <!-- YOUTUBE -->
             <a href="/youtube" class="project-card">
                 <span class="project-icon" aria-hidden="true">▶</span>
 
@@ -406,7 +350,6 @@
                 <span class="project-arrow" aria-hidden="true">→</span>
             </a>
 
-            <!-- MUSIK -->
             <a href="/musik" class="project-card">
                 <span class="project-icon" aria-hidden="true">♫</span>
 
@@ -421,7 +364,6 @@
                 <span class="project-arrow" aria-hidden="true">→</span>
             </a>
 
-            <!-- MODS -->
             <a href="/mods" class="project-card">
                 <span class="project-icon" aria-hidden="true">↓</span>
 
@@ -438,7 +380,6 @@
 
         </nav>
 
-        <!-- FOOTER -->
         <footer class="projects-footer">
             <a href="https://www.pipole.de/" class="back-link">
                 ← Zurück zur Startseite
@@ -448,4 +389,3 @@
     </main>
 </body>
 </html>
-```
