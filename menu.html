@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080808">
+
+    <title>Menü | PIPOLE GROUP</title>
+    <meta name="description"
+          content="Entdecke die Projekte, Geschichte und Kontaktmöglichkeiten von PIPOLE GROUP.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .menu-page {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+            padding: 55px 0 80px;
+        }
+
+        /* Kopfbereich */
+        .menu-header {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .menu-logo {
+            width: min(220px, 65%);
+            max-height: 150px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .menu-header h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            letter-spacing: 3px;
+            margin: 0 0 10px;
+        }
+
+        .menu-header p {
+            color: #c5c5c5;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Raster mit sieben Menükästen */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        /* Einheitliche Menükästen */
+        .menu-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 185px;
+            padding: 28px 22px;
+            overflow: hidden;
+
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+
+            background: rgba(18, 18, 18, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        /* Regenbogenlinie oben */
+        .menu-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+
+            background: linear-gradient(
+                90deg,
+                #ff0000,
+                #ff7a00,
+                #ffe600,
+                #00c853,
+                #009dff,
+                #6a00ff
+            );
+        }
+
+        .menu-card:hover {
+            transform: translateY(-4px);
+            background: rgba(35, 35, 35, 0.97);
+            border-color: rgba(255, 255, 255, 0.28);
+        }
+
+        .menu-card:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 4px;
+        }
+
+        .menu-card h2 {
+            font-size: 1.25rem;
+            letter-spacing: 1.5px;
+            margin: 12px 0 8px;
+        }
+
+        .menu-card p {
+            color: #c5c5c5;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Symbol */
+        .menu-icon {
+            width: 43px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        /* HOME nimmt beide Spalten ein */
+        .menu-card-home {
+            grid-column: 1 / -1;
+            min-height: 155px;
+        }
+
+        .menu-card-home h2 {
+            font-size: 1.5rem;
+        }
+
+        /* Fußbereich */
+        .menu-footer {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .menu-footer a {
+            display: inline-block;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 7px;
+            transition: background 0.2s ease;
+        }
+
+        .menu-footer a:hover {
+            background: rgba(255, 255, 255, 0.10);
+        }
+
+        /* Smartphone */
+        @media (max-width: 650px) {
+            .menu-page {
+                padding-top: 35px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .menu-card-home {
+                grid-column: auto;
+            }
+
+            .menu-card {
+                min-height: 150px;
+                padding: 24px 18px;
+            }
+
+            .menu-header {
+                margin-bottom: 28px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .menu-card {
+                transition: none;
+            }
+
+            .menu-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="menu-page">
+
+        <header class="menu-header">
+            <a href="index.html" aria-label="Zur Startseite">
+                <img
+                    class="menu-logo"
+                    src="assets/pipole-group-logo.png"
+                    alt="PIPOLE GROUP Logo">
+            </a>
+
+            <h1>MENÜ</h1>
+            <p>7 Leben. Vereint in PIPOLE.</p>
+        </header>
+
+        <nav class="menu-grid" aria-label="Hauptmenü">
+
+            <!-- 1. STARTSEITE: über die gesamte Breite -->
+            <a class="menu-card menu-card-home" href="index.html">
+                <span class="menu-icon" aria-hidden="true">⌂</span>
+                <h2>STARTSEITE</h2>
+                <p>Zurück zur PIPOLE GROUP Homepage</p>
+            </a>
+
+            <!-- 2. PROJEKTE -->
+            <a class="menu-card" href="projekte.html">
+                <span class="menu-icon" aria-hidden="true">▤</span>
+                <h2>PROJEKTE</h2>
+                <p>Musik, Gaming, Trainspotting und mehr</p>
+            </a>
+
+            <!-- 3. PIPOLE -->
+            <a class="menu-card" href="ueber.html">
+                <span class="menu-icon" aria-hidden="true">🐈</span>
+                <h2>PIPOLE</h2>
+                <p>Die Geschichte hinter PIPOLE GROUP</p>
+            </a>
+
+            <!-- 4. COMMUNITY -->
+            <a class="menu-card" href="community.html">
+                <span class="menu-icon" aria-hidden="true">♧</span>
+                <h2>COMMUNITY</h2>
+                <p>Creator und gemeinsame Projekte entdecken</p>
+            </a>
+
+            <!-- 5. KONTAKT -->
+            <a class="menu-card" href="kontakt.html">
+                <span class="menu-icon" aria-hidden="true">✉</span>
+                <h2>KONTAKT</h2>
+                <p>Alle Kontaktmöglichkeiten im Überblick</p>
+            </a>
+
+            <!-- 6. IMPRESSUM -->
+            <a class="menu-card" href="impressum.html">
+                <span class="menu-icon" aria-hidden="true">§</span>
+                <h2>IMPRESSUM</h2>
+                <p>Rechtliche Angaben</p>
+            </a>
+
+            <!-- 7. DATENSCHUTZ -->
+            <a class="menu-card" href="datenschutz.html">
+                <span class="menu-icon" aria-hidden="true">◈</span>
+                <h2>DATENSCHUTZ</h2>
+                <p>Informationen zum Datenschutz</p>
+            </a>
+
+        </nav>
+
+        <footer class="menu-footer">
+            <a href="index.html">← Zurück zur Startseite</a>
+        </footer>
+
+    </main>
+</body>
+</html>
