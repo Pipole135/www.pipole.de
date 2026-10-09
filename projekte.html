@@ -169,22 +169,39 @@
             outline-offset: 4px;
         }
 
-        .project-icon {
+        .project-card .project-icon {
             grid-column: 1;
             justify-self: center;
-            display: flex;
+            align-self: center;
+            display: flex !important;
             align-items: center;
             justify-content: center;
             width: 65px;
+            min-width: 65px;
             height: 65px;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
             font-size: 2.4rem;
+            font-weight: 400;
             line-height: 1;
+            text-align: center;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            z-index: 1;
         }
 
-        .project-content {
+        .project-card .project-content {
             grid-column: 2;
+            display: block;
             min-width: 0;
-            text-align: left;
+            margin: 0;
+            padding: 0;
+            text-align: left !important;
+            position: relative;
+            z-index: 1;
         }
 
         .project-content h2 {
@@ -204,12 +221,18 @@
             text-align: left;
         }
 
-        .project-arrow {
+        .project-card .project-arrow {
             grid-column: 3;
             justify-self: center;
+            align-self: center;
+            display: block;
+            margin: 0;
+            padding: 0;
             font-size: 1.8rem;
             line-height: 1;
             color: #ffffff;
+            position: relative;
+            z-index: 1;
         }
 
         .projects-footer {
@@ -271,8 +294,9 @@
                 text-align: left;
             }
 
-            .project-icon {
+            .project-card .project-icon {
                 width: 45px;
+                min-width: 45px;
                 height: 45px;
                 font-size: 2rem;
             }
@@ -286,7 +310,7 @@
                 font-size: 0.9rem;
             }
 
-            .project-arrow {
+            .project-card .project-arrow {
                 font-size: 1.3rem;
             }
         }
