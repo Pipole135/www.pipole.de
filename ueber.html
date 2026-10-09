@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080808">
+    <title>Über PIPOLE GROUP</title>
+    <meta name="description" content="Lerne PIPOLE GROUP kennen – die Dachmarke hinter PIPOLE, PIPOLE Journey's und weiteren kreativen Projekten.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .about-page {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+            padding: 70px 0 90px;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .about-logo {
+            width: min(280px, 75%);
+            max-height: 180px;
+            object-fit: contain;
+            margin-bottom: 30px;
+        }
+
+        .about-header h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            margin: 0 0 15px;
+            letter-spacing: 3px;
+        }
+
+        .about-header p {
+            color: #c5c5c5;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-section {
+            margin-bottom: 45px;
+            padding: 30px;
+            background: rgba(15, 15, 15, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 12px;
+        }
+
+        .about-section h2 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 1.6rem;
+        }
+
+        .about-section p {
+            color: #d0d0d0;
+            line-height: 1.9;
+            margin-bottom: 12px;
+        }
+
+        .about-projects {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .about-project {
+            padding: 25px;
+            background: rgba(20, 20, 20, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+        }
+
+        .about-project h3 {
+            margin-top: 0;
+            letter-spacing: 1px;
+        }
+
+        .about-project p {
+            color: #c5c5c5;
+            line-height: 1.7;
+        }
+
+        .about-back {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 7px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .about-back:hover {
+            background: rgba(255, 255, 255, 0.10);
+        }
+
+        @media (max-width: 700px) {
+            .about-projects {
+                grid-template-columns: 1fr;
+            }
+
+            .about-section {
+                padding: 22px;
+            }
+
+            .about-page {
+                padding-top: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="about-page">
+
+        <header class="about-header">
+            <a href="index.html" aria-label="Zur Startseite">
+                <img
+                    class="about-logo"
+                    src="assets/pipole-group-logo.png"
+                    alt="PIPOLE GROUP Logo">
+            </a>
+
+            <h1>ÜBER PIPOLE GROUP</h1>
+            <p>One name. Many journeys.</p>
+        </header>
+
+        <section class="about-section">
+            <h2>Was ist PIPOLE GROUP?</h2>
+            <p>
+                PIPOLE GROUP ist die Dachmarke für die verschiedenen kreativen
+                Projekte rund um den Namen PIPOLE.
+            </p>
+            <p>
+                Musik, Gaming und Trainspotting gehören zu dieser vielseitigen
+                Welt. Die Dachmarke verbindet die einzelnen Projekte unter
+                einem gemeinsamen Namen und schafft einen zentralen Anlaufpunkt.
+            </p>
+        </section>
+
+        <section class="about-section">
+            <h2>Unsere Projekte</h2>
+
+            <div class="about-projects">
+                <article class="about-project">
+                    <h3>PIPOLE JOURNEY'S</h3>
+                    <p>
+                        Gaming und Trainspotting: Hier treffen virtuelle
+                        Abenteuer auf die faszinierende Welt der Eisenbahn.
+                    </p>
+                    <a href="https://www.youtube.com/@pipolejourney"
+                       class="about-back">
+                        YouTube besuchen →
+                    </a>
+                </article>
+
+                <article class="about-project">
+                    <h3>PIPOLE MUSIC</h3>
+                    <p>
+                        Musik und eigene Veröffentlichungen stehen hier
+                        im Mittelpunkt – ein eigener Bereich für kreative
+                        Ideen und musikalische Projekte.
+                    </p>
+                    <a href="https://www.youtube.com/@pipolemusic"
+                       class="about-back">
+                        YouTube besuchen →
+                    </a>
+                </article>
+
+                <article class="about-project">
+                    <h3>PIPOLE GROUP</h3>
+                    <p>
+                        Der zentrale Auftritt der Dachmarke und die Verbindung
+                        zwischen den verschiedenen Projekten.
+                    </p>
+                    <a href="https://www.youtube.com/@pipolegroup"
+                       class="about-back">
+                        YouTube besuchen →
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Eine gemeinsame Identität</h2>
+            <p>
+                Hinter den einzelnen Projekten steht eine gemeinsame kreative
+                Identität. PIPOLE GROUP bündelt diese Auftritte, ohne dass
+                jedes Projekt seinen eigenen Charakter verliert.
+            </p>
+        </section>
+
+        <a href="index.html" class="about-back">
+            ← Zurück zur Startseite
+        </a>
+
+    </main>
+</body>
+</html>
