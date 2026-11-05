@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,9 +7,9 @@
     <title>PIPOLE GROUP</title>
     <link rel="stylesheet" href="style.css">
 
-    
     <style>
         .modding-ad {
+            display: block;
             width: min(900px, calc(100% - 32px));
             margin: 15px auto 45px;
             padding: 3px;
@@ -23,6 +24,13 @@
                 #a16ae0
             );
             box-sizing: border-box;
+            color: inherit;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .modding-ad:hover {
+            transform: translateY(-3px);
         }
 
         .modding-ad-content {
@@ -67,7 +75,7 @@
             transition: background 0.2s, border-color 0.2s;
         }
 
-        .modding-ad-button:hover {
+        .modding-ad:hover .modding-ad-button {
             background: #353535;
             border-color: #f3a0cd;
         }
@@ -87,8 +95,18 @@
                 padding: 13px 12px;
             }
         }
-    </style>
 
+        @media (prefers-reduced-motion: reduce) {
+            .modding-ad,
+            .modding-ad-button {
+                transition: none;
+            }
+
+            .modding-ad:hover {
+                transform: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -108,33 +126,34 @@
     </header>
 
     <div style="margin: 25px auto 30px; padding: 0 15px; color: #c5c5c5; text-align: center; font-size: 0.95rem; line-height: 1.7;">
-        Diese Website befindet sich in Entwicklung. 
+        Diese Website befindet sich in Entwicklung.
         Es sind noch nicht alle Features verfügbar und einzelne Unterseiten können zeitweise nicht funktionieren!
     </div>
 
-
-    <!-- PIPOLE MODDING – MITARBEITER GESUCHT -->
-    <section class="modding-ad" aria-labelledby="modding-ad-title">
-
+    <!-- TRAINSPOTTING-LIVESTREAM ZEVENAAR -->
+    <a
+        class="modding-ad"
+        href="https://www.youtube.com/live/gM9-RfKEoPU?is=5uvqklFhoWi95bR8"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Zum Trainspotting-Livestream aus Zevenaar auf YouTube"
+    >
         <div class="modding-ad-content">
-            <span class="modding-ad-label">PIPOLE MODDING</span>
+            <span class="modding-ad-label">PIPOLE JOURNEY'S · TRAINSPOTTING</span>
 
-            <h2 id="modding-ad-title">MITARBEITER GESUCHT!</h2>
+            <h2>TRAINSPOTTING-LIVESTREAM AUS ZEVENAAR</h2>
 
             <p>
-                Du hast Lust auf OMSI 2, Fahrzeugmodding, Repaints
-                oder Beta-Tests? Unterstütze unsere Projekte und
-                entwickle gemeinsam mit uns neue Inhalte für den Bahnverkehr.
+                Hartelijk welkom! Mein mächster Livestream steht an:
+                TRAINSPOTTING aus ZEVENAAR (NL)
             </p>
 
-            <a href="/mitarbeitergesucht" class="modding-ad-button">
-                Jetzt informieren und mitmachen →
-            </a>
+            <span class="modding-ad-button">
+                Jetzt Livestream ansehen →
+            </span>
         </div>
+    </a>
 
-    </section>
-
-    
     <!-- PROJEKTE UND MENÜ -->
     <section class="projects" id="projects" style="padding-top: 20px;">
 
